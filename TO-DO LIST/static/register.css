@@ -1,0 +1,22 @@
+.container {
+    background: hsla(0, 0%, 10%, 0.1);
+
+    padding: 20px;
+    border-radius: 10px;
+    margin-right:500px;
+    margin-left:500px;
+    margin-top:60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+h2{
+margin-top:100px;
+margin-left:660px;
+font-size:50px;
+}
+
+body{
+background-image:url('https://img.freepik.com/free-vector/hand-drawn-cherry-leaf_53876-112912.jpg?w=740&t=st=1699187141~exp=1699187741~hmac=153ca78b59cfd3efb85838fa6b8e3355c0370a4fd4c440b06d83f5248c88e211');
+background-repeat:no-repeat;
+background-size:cover;
+}

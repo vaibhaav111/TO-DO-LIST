@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+</head>
+
+<body>
+ <div class="background">
+        <div class="content">
+    <h2> signup</h2>
+    <div class="container">
+    <form action="{% url 'tasks:signup' %}" method="POST" novalidate>
+        {% csrf_token %} <!-- cross site request forgery-->
+        {{form.as_p}}
+        <input type="submit" value="Register" class="btn btn-block btn-primary">
+    </form>
+    </div>
+        </div>
+ </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'l.css' %}">
+</head>
+
+<body>
+    <div class="background">
+        <div class="content">
+    <h2>Login</h2>
+    <div class="container">
+          <form action="{% url 'tasks:login_user' %}" method="POST" novalidate>
+
+<!--{% csrf_token %} tag is essential for security to prevent CSRF attacks, and {{form.as_p}} is a template variable
+that simplifies the rendering of a Django form in a paragraph-based format. The
+combination of these elements is commonly used when displaying and submitting forms in Django templates.-->
+
+
+        {% csrf_token %}  <!--cross site request forgery-->
+        {{form.as_p}}
+        <br>
+        <input type="submit" value="Login" class="btn btn-block btn-primary">
+
+
+    </form>
+    </div>
+        </div>
+    </div>
+</body>
+
+</html>

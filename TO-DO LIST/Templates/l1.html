@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'list1.css' %}">
+    <style>
+        tbody tr:not(.visible) {
+        display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>TASK LIST</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Task Name</th>
+            <th>Task Date</th>
+            <th>Task Status</th>
+            <th>Delete</th>
+            <th>Update</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %} <!-- tasks in views-->
+        <tr>
+<!--            <td>{{task.task_id}}</td>-->
+            <td>*</td>
+            <td>{{ task.name }}</td>
+            <td>{{ task.t_date }}</td>
+            <td>{{ task.get_status_display }}</td>
+            <td>
+                <a href="{% url 'tasks:task_delete' pk=task.task_id %}">❌</a>
+            </td>
+            <td>
+                <a href="{% url 'tasks:task_update' pk=task.task_id %}">✅</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+
+    </tbody>
+</table>
+
+<br>
+<button id="prev" type="button" class="btn btn-primary" name="button">Previous</button>
+<button id="next" type="button" class="btn btn-primary" name="button">Next</button>
+<a href="{% url 'tasks:task_create' %}"class="custom-link">Add New Task</a>
+<a class="logout-link" href="{% url 'tasks:logout_user' %}">Logout</a>
+
+<br>
+
+<script>
+    const visible_rows = 10;
+const table_rows = document.querySelectorAll('tbody tr');
+
+
+if (!document.querySelector('.active')) {
+  table_rows[0].classList.add('active');
+}
+
+function showRows() {
+  let active_row = document.querySelector('.active');
+
+  for (i = 0; i < table_rows.length; i++) {
+    table_rows[i].classList.remove('visible');
+  }
+
+  for (i = 0; i < visible_rows; i++) {
+    active_row.classList.add('visible');
+
+    if (active_row.nextElementSibling) {
+      active_row = active_row.nextElementSibling;
+    }
+  }
+}
+
+document.querySelector('#next').addEventListener('click', function() {
+  const active_row = document.querySelector('.active');
+  const active_index = active_row.rowIndex;
+
+  if (table_rows.length > active_index + visible_rows - 1) {
+    active_row.classList.remove('active');
+    table_rows[active_index + visible_rows - 1].classList.add('active');
+    showRows();
+  }
+});
+document.querySelector('#prev').addEventListener('click', function() {
+  const active_row = document.querySelector('.active');
+  const active_index = active_row.rowIndex;
+
+  if (active_index > 1) {
+    active_row.classList.remove('active');
+    table_rows[active_index - visible_rows - 1].classList.add('active');
+    showRows();
+  }
+});
+
+showRows();
+
+</script>
+
+</body>
+</html>

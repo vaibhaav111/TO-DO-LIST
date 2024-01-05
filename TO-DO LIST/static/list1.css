@@ -1,0 +1,89 @@
+table{
+        border-collapse: collapse;
+        width: 100%;
+        background-size: cover;
+
+    }
+
+th{
+        border: 3px solid black;
+        padding: 8px;
+        text-align: center;
+        color:purple ;
+           }
+td{
+border: 1px solid black;
+padding: 8px;
+text-align: center;
+color: brown;
+}
+
+
+body{
+    background-image: url('https://img.freepik.com/free-vector/vintage-leaves-background_53876-99507.jpg?w=740&t=st=1699182924~exp=1699183524~hmac=c94fa5d34314c526bdc45bff16edcb309c79b6714ac3d121080c261b94b6487b');
+    background-repeat:no-repeat;
+    background-size:cover;
+    }
+
+
+a{
+    text-decoration:none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center vertically in the viewport */
+}
+
+button#prev, button#next {
+    background: linear-gradient(to right, #007BFF, #0056b3); /* Gradient background */
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* Apply custom styles to the "Add New Task" link with the .custom-link class */
+.custom-link {
+    background: linear-gradient(to right, #007BFF, #0056b3); /* Blue background color */
+    color: #FFF; /* White text color */
+    border: none; /* Remove link underline and border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 5px; /* Add rounded corners */
+    text-decoration: none; /* Remove the default underline */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+
+    /* Hover effect */
+    &:hover {
+        background-color: #0056b3; /* Darker blue background color on hover */
+    }
+}
+
+/* Apply custom styles to the header with the .custom-header class */
+h2 {
+    font-size: 40px; /* Increase font size */
+    font-weight: bold; /* Apply bold font style */
+
+    color: #82645e; /* Blue text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+    margin: 20px 0; /* Add spacing above and below the header */
+    margin-left:650px;
+}
+
+
+.logout-link{
+ background: linear-gradient(to right, #007BFF, #0056b3); /* Gradient background */
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+
+
+}
