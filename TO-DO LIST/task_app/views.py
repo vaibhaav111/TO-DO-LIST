@@ -20,8 +20,6 @@ from django.shortcuts import render, redirect
 def home(request):
     return render(request, 'Tasks/home.html')
 
-# def register(request):
-#     return render(request, 'Tasks/register.html')
 
 class signup(CreateView): # # used to handle the submission of form
     model = User #DB
