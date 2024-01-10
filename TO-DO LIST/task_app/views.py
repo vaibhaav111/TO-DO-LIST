@@ -55,7 +55,7 @@ def login_user(request):
             messages.error(request, "Invalid username or password")#Finally, it renders the login page, either with a fresh form or with error messages.
 
 
-    # form= AuthenticationForm()#where users can write their username and password.
+   
     return render(request, 'Tasks/login.html', {'form':form})
 
 
@@ -66,7 +66,7 @@ def logout_user(request):
 
 #create
 def task_create(request):   # to add new task
-    # print(request) #to see what data is being sent with the request. in console log
+   
     if request.method == "POST": #This is like asking, "Did someone fill out a form and submit it to us?"
         form=TaskForm(request.POST) #it creates a form (TaskForm) with the data from the submitted form.
         if form.is_valid():#Checks if the submitted form is valid.
